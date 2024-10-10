@@ -7,7 +7,7 @@ export class Aluno {
     /* Identificador do aluno */
     private idAluno: number = 0;
     /* ra do aluno */
-    private ra: string;
+    private raAluno: string = "";
     /* nome do aluno */
     private nome: string;
     /* sobrenome do aluno */
@@ -24,7 +24,6 @@ export class Aluno {
     /**
      * Construtor da classe Aluno
      * 
-     * @param ra RA do aluno
      * @param nome Nome do aluno 
      * @param sobrenome Sobrenome do aluno
      * @param dataNascimento data de nascimento do aluno
@@ -33,7 +32,6 @@ export class Aluno {
      * @param celular Celular do aluno
      */
     constructor(
-        ra: string,
         nome: string,
         sobrenome: string,
         dataNascimento: Date,
@@ -41,7 +39,6 @@ export class Aluno {
         email: string,
         celular: string
     ) {
-        this.ra = ra;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.dataNascimento = dataNascimento;
@@ -67,22 +64,20 @@ export class Aluno {
         this.idAluno = idAluno;
     }
 
-    /**
-     * Retorna o RA do aluno.
-     * 
-     * @returns o RA do aluno.
+     /**
+     * Recupera o ra do aluno
+     * @returns o ra do aluno
      */
-    public getRA(): string {
-        return this.ra;
+     public getRaAluno(): string {
+        return this.raAluno;
     }
 
     /**
-     * Define o ra do aluno.
-     * 
-     * @param ra - novo ra do aluno.
+     * Atribui um valor ao ra do aluno
+     * @param raAluno novo ra do aluno
      */
-    public setRA(ra: string): void {
-        this.ra = ra;
+    public setRaAluno(raAluno: string): void {
+        this.raAluno = raAluno;
     }
 
 
