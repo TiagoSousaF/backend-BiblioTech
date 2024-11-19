@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Livro } from "../model/Livro";
 
 interface LivroDTO {
-    idLivro: number,
+    id_livro: number,
     titulo: string,
     autor: string,
     editora: string,

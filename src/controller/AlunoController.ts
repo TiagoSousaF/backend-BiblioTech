@@ -67,7 +67,7 @@ export class AlunoController extends Aluno {
                                         alunoRecebido.dataNascimento, 
                                         alunoRecebido.endereco,
                                         alunoRecebido.email,
-                                        alunoRecebido. celular);
+                                        alunoRecebido.celular);
 
             // Chama a função de cadastro passando o objeto como parâmetro
             const repostaClasse = await Aluno.cadastrarAluno(novoAluno);

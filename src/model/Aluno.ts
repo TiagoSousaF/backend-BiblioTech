@@ -220,7 +220,7 @@ export class Aluno {
             const novoAluno = new Aluno(
                 linha.nome,
                 linha.sobrenome,
-                linha.dataNascimento,
+                linha.data_nascimento,
                 linha.endereco,
                 linha.email,
                 linha.celular
@@ -228,7 +228,8 @@ export class Aluno {
 
             // atribui o ID objeto
             novoAluno.setIdAluno(linha.id_aluno);
-
+            novoAluno.setRaAluno(linha.ra);
+            
             // adiciona o objeto na lista
             listaDeAlunos.push(novoAluno);
         });
