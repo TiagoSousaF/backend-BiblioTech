@@ -351,4 +351,75 @@ export class Livro {
             return false;
         }
     }
+
+    static async removerLivro(idLivro: number): Promise<boolean> {
+        try {
+            //cria uma query para deletar um objeto do banco de dados, passando como parâmetro o ID
+            const queryDeleteLivro = `DELETE FROM livro WHERE id_livro = ${idLivro}`;
+
+            //executar a query e armazenar a resposta do banco de daodos
+            const respostaBD = await database.query(queryDeleteLivro);
+
+            //verifica se o número de linhas alteradas é diferente de 0
+            if (respostaBD.rowCount != 0) {
+                //exibe uma mensagem no console
+                console.log(`Livro removido com sucesso. ID removido: ${idLivro}`);
+                //retorna true, indicando que o livro foi removido
+                return true;
+            }
+
+            //retorna false, o que indica que o livro foi removido
+            return true;
+            //trata qualquer erro que possa acontecer no caminho
+        } catch (error) {
+            //exibe uma mensagem de falha
+            console.log(`Erro ao remover livro. Verifique os logs para mais detalhes.`);
+            //imprime o erro no console da API
+            console.log(error);
+            //retorna false, o que indica que a remoção não foi feita 
+            return false;
+        }
+    }
+
+    static async atualizarLivro(livro: Livro): Promise<boolean> {
+        try {
+            const queryUpdateLivro = `UPDATE livro SET
+                                     titulo = '${livro.getTitulo()}',
+                                     autor = '${livro.getAutor()}',
+                                     editora = '${livro.getEditora()}',
+                                     ano_publicacao = '${livro.getAnoPublicacao()}',
+                                     isbn = '${livro.getIsbn()}',
+                                     quant_total = ${livro.getQuantTotal()},
+                                     quant_disponivel = ${livro.getQuantDisponivel()}, 
+                                     valor_aquisicao = ${livro.getValorAquisicao()}, 
+                                     status_livro_emprestado = '${livro.getStatusLivroEmprestado()}'
+                                     WHERE id_livro = ${livro.getIdLivro()};`;
+
+            console.log(queryUpdateLivro);
+
+            //executar a query e armazenar a resposta do banco de dados em uma variável
+            const respostaBD = await database.query(queryUpdateLivro);
+            console.log(queryUpdateLivro);
+
+
+            //verifica se alguma linha foi alterada
+            if (respostaBD.rowCount != 0) {
+                //imprime uma mensagem de sucesso no console
+                console.log(`Livro atualizado com sucesso! ID: ${livro.getIdLivro()}`);
+                //retorna true, indicando que a query foi executada com sucesso
+                return true;
+            }
+
+            //retorna falso, indicando que a query não foi executada com sucesso
+            return false;
+
+        } catch (error) {
+            //exibe uma mensagem de falha
+            console.log(`Erro ao atualizar o livro. Verifique os logs para mais detalhes.`);
+            //imprime o erro no console da API
+            console.log(error);
+            //retorna false, o que indica que a remoção não foi feita
+            return false;
+        }
+    }
 }
