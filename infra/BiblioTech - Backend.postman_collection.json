@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "f3712225-2934-4e88-8d32-6302de9b6b21",
+		"name": "BiblioTech - Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38148731"
+	},
+	"item": [
+		{
+			"name": "Livro",
+			"item": [
+				{
+					"name": "Rota Listar Livros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/lista/livros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"lista",
+								"livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Cadastro Livro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Como treinar seu dragão\",\r\n    \"autor\": \"Roberto\",\r\n    \"editora\": \"Intrínseca\",\r\n    \"anoPublicacao\": \"2005\",\r\n    \"isbn\": \"19283\",\r\n    \"quantTotal\": \"10\",\r\n    \"quantDisponivel\": \"9\",\r\n    \"valorAquisicao\": \"150.00\",\r\n    \"statusLivroEmprestado\": \"Disponível\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/novo/livro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"novo",
+								"livro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Deletar Livro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/delete/livro/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"delete",
+								"livro",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Atualizar Livro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Como treinar seu dragão\",\r\n    \"autor\": \"Roberto\",\r\n    \"editora\": \"Intrínseca\",\r\n    \"anoPublicacao\": \"2005\",\r\n    \"isbn\": \"19283\",\r\n    \"quantTotal\": 10,\r\n    \"quantDisponivel\": 9,\r\n    \"valorAquisicao\": 150.00,\r\n    \"statusLivroEmprestado\": \"Disponível\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/atualizar/livro/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"atualizar",
+								"livro",
+								"25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aluno",
+			"item": [
+				{
+					"name": "Rota Listar Alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/lista/alunos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"lista",
+								"alunos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Cadastro Aluno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"José\",\r\n    \"sobrenome\": \"Reis\",\r\n    \"dataNascimento\": \"02-03-1987\",\r\n    \"endereco\": \"Rua das palmeiras\",\r\n    \"email\": \"123@gmail.com\",\r\n    \"telefone\": \"16992794959\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/novo/aluno",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"novo",
+								"aluno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Deletar Aluno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/delete/aluno/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"delete",
+								"aluno",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Atualizar Aluno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \"nome\": \"guilherme\",\r\n        \"sobrenome\": \"borges\",\r\n        \"dataNascimento\": \"2001-01-21T02:00:00.000Z\",\r\n        \"endereco\": \"rua das conchas\",\r\n        \"email\": \"guiborges@mail.com\",\r\n        \"celular\": \"17998264334\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/atualizar/aluno/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"atualizar",
+								"aluno",
+								"25"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emprestimos",
+			"item": [
+				{
+					"name": "Rota Listar Emprestimos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/lista/emprestimos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"lista",
+								"emprestimos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Deletar Emprestimo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/delete/emprestimo/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"delete",
+								"emprestimo",
+								"24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rota Atualizar Emprestimo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idAluno\": 19,\r\n        \"idLivro\": 24,\r\n        \"tituloLivro\": \"ABC\",\r\n        \"dataEmprestimo\": \"2024-09-20\",\r\n        \"dataDevolucao\": \"2024-10-04\",\r\n        \"statusLivroEmprestado\": \"Em andamento\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/atualizar/emprestimo/24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"atualizar",
+								"emprestimo",
+								"24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rota Principal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
